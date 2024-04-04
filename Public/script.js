@@ -1,3 +1,14 @@
+function suivant(){ 
+    var randomNumber = Math.floor(Math.random()*9) +1  ;
+    var boutonRandom = ".btn"+randomNumber ;
+    $(boutonRandom).addClass("suivant");
+
+};
+
+$(document).ready(function() {
+    suivant();
+});
+
 function animatePress (currentcolor) { 
     $("#"+currentcolor).addClass("pressed");
     setTimeout(()=>{$("#"+currentcolor).removeClass("pressed")}, 100);
@@ -8,10 +19,13 @@ let level = 1 ;
 
 $(".btn").click(function(event){ 
     var userChosenColor = $(this).attr("id");
-    if ($(this).hasClass("green") == true) {
+        
+    if ($(this).hasClass("green") && $(this).hasClass("suivant") == true) {
         points = points -1 ; 
         $("h2").text((points) + " points avant exercice suivant") ;
         animatePress(userChosenColor);
+        $(this).removeClass("suivant");
+        suivant();
 
         if (points <= 0 ) {
             $("h1").html("Clique <span>ici</span> pour accéder à l'exercice suivant")
@@ -21,10 +35,13 @@ $(".btn").click(function(event){
 
 $(".btn").on("contextmenu", function(event) {
     var userChosenColor = $(this).attr("id");
-    if ($(this).hasClass("yellow") == true) {
+        
+    if ($(this).hasClass("yellow") && $(this).hasClass("suivant") == true) {
         points = points -2 ; 
         $("h2").text((points) + " points avant l'exercice suivant") ;
         animatePress(userChosenColor);
+        $(this).removeClass("suivant");
+        suivant();
 
         if (points <= 0 ) {
             $("h1").html("Clique <span>ici</span> pour accéder à l'exercice suivant")
@@ -35,10 +52,13 @@ $(".btn").on("contextmenu", function(event) {
 
 $(".btn").on("dblclick", function(event) {
     var userChosenColor = $(this).attr("id");
-    if ($(this).hasClass("red") == true) {
+        
+    if ($(this).hasClass("red") && $(this).hasClass("suivant") == true == true) {
         points = points -3 ; 
         $("h2").text((points) + " points avant exercice suivant") ;
         animatePress(userChosenColor);
+        $(this).removeClass("suivant");
+        suivant();
 
         if (points <= 0 ) {
             $("h1").html("Clique <span>ici</span> pour accéder à l'exercice suivant")
