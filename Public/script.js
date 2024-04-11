@@ -14,22 +14,13 @@ function animatePress (currentcolor) {
     setTimeout(()=>{$("#"+currentcolor).removeClass("pressed")}, 100);
 };
 
-let points = 10 ;
-let level = 1 ;
-
 $(".btn").click(function(event){ 
     var userChosenColor = $(this).attr("id");
         
     if ($(this).hasClass("green") && $(this).hasClass("suivant") == true) {
-        points = points -1 ; 
-        $("h2").text((points) + " points avant exercice suivant") ;
         animatePress(userChosenColor);
         $(this).removeClass("suivant");
         suivant();
-
-        if (points <= 0 ) {
-            $("h1").html("Clique <span>ici</span> pour accéder à l'exercice suivant")
-        }
     }
 }); 
 
@@ -37,15 +28,9 @@ $(".btn").on("contextmenu", function(event) {
     var userChosenColor = $(this).attr("id");
         
     if ($(this).hasClass("yellow") && $(this).hasClass("suivant") == true) {
-        points = points -2 ; 
-        $("h2").text((points) + " points avant l'exercice suivant") ;
         animatePress(userChosenColor);
         $(this).removeClass("suivant");
         suivant();
-
-        if (points <= 0 ) {
-            $("h1").html("Clique <span>ici</span> pour accéder à l'exercice suivant")
-        }
     }
     event.preventDefault();
 }) ;
@@ -54,35 +39,73 @@ $(".btn").on("dblclick", function(event) {
     var userChosenColor = $(this).attr("id");
         
     if ($(this).hasClass("red") && $(this).hasClass("suivant") == true == true) {
-        points = points -3 ; 
-        $("h2").text((points) + " points avant exercice suivant") ;
         animatePress(userChosenColor);
         $(this).removeClass("suivant");
         suivant();
-
-        if (points <= 0 ) {
-            $("h1").html("Clique <span>ici</span> pour accéder à l'exercice suivant")
-        }
     }});
 
+    let level = 1 ;
+
 function fonctionNiveau(niv) {
-    level = level +1 ;
+if (niv <= 1) {
+    document.querySelectorAll(".btn").forEach(function(element){
+        element.classList.remove("yellow", "red");
+        element.classList.add("green") ;
+    })
+        $("h1").text("Tout vert") ;
+        document.querySelector("h2").innerHTML = "Vert : clic gauche"
+        level = 1 ;
+}
+else if (niv == 2) {
+    $("h1").text("Tout jaune") ;
+    document.querySelector("h2").innerHTML = "Jaune : Clic droit"
+    document.querySelectorAll(".btn").forEach(function(element){
+        element.classList.remove("green", "red");
+        element.classList.add("yellow") ;
+    })
+}
+else if (niv == 3) {
+    $("h1").text("Mini mix") ;
+    document.querySelector("h2").innerHTML = "Vert : Clic gauche <br> Jaune : Clic droit" ;
+    document.querySelectorAll("#s1, #m1, #b1, #s3").forEach(function(element){
+        element.classList.remove("yellow", "red");
+        element.classList.add("green") ;
+    })
+    document.querySelectorAll("#s2, #m2, #b2, #m3, #b3").forEach(function(element){
+        element.classList.remove("green", "red");
+        element.classList.add("yellow") ;
+    })}
+else if (niv == 4) {
+    document.querySelector("h1").innerHTML = "Tout rouge" ;
+    document.querySelector("h2").innerHTML = "Rouge : Double clic" ;
+    document.querySelectorAll(".btn").forEach(function(element){
+        element.classList.remove("yellow", "green") ;
+        element.classList.add("red") ;
+    })
+}
 
-    if (niv >= 2) {
-        $("#s2, #m2, #b2").removeClass("green").addClass("yellow");
-        $("h1").text("Exercice " + (level)) ;
-        $("h3").html("1 point : clic gauche sur bouton vert <br> 2 points : clic droit sur bouton jaune") ;
-        points = 20 ;
-        $("h2").text((points) + " points avant exercice suivant") ;
-
-        if (level >= 3) {
-            $("#s3, #m3, #b3").removeClass("green").addClass("red");
-            $("h3").html("1 point : clic gauche sur bouton vert <br> 2 points : clic droit sur bouton jaune <br> 3 points : double clic sur bouton rouge") ;
-        };
+else if  (level >= 5) {
+    document.querySelector("h1").innerHTML = "Mix" ;
+    document.querySelector("h2").innerHTML = "Vert : Clic gauche <br> Jaune : Clic droit <br>Rouge : Double clic" ;
+    document.querySelectorAll(".btn").forEach(function(element){
+        element.classList.remove("yellow", "green", "red") ;
+    })
+    document.querySelectorAll("#s1, #m1, #b1").forEach(function(element){
+        element.classList.add("green") ;
+    })
+    document.querySelectorAll("#s2, #m2, #b2").forEach(function(element){
+        element.classList.add("yellow") ;
+    })
+    document.querySelectorAll("#s3, #m3, #b3").forEach(function(element){
+        element.classList.add("red") ;
+    })
+    document.querySelectorAll(".btn").forEach(function(element){
+        element.classList.remove("hidden", "draggable1", "dropzone1") } ) 
+             ;
+        level = 5 ;
+        }
     }; 
 
-};
+document.querySelector(".suiv").addEventListener("click", () => {level = level +1 ; fonctionNiveau(level)}) ;
 
-$("h1").click(function(event){
-    (points <= 0) ? fonctionNiveau(level + 1) : undefined
-});
+document.querySelector(".prec").addEventListener("click", () => { level = level-1 ; fonctionNiveau(level)} ) ;
