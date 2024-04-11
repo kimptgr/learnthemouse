@@ -1,5 +1,16 @@
+var previousNumber = -1 ;
+
+function getNumber() {
+    var randomNumber = Math.floor(Math.random()*9) +1 ; 
+    if (previousNumber === randomNumber) {
+       return getNumber() ;
+    }
+    else {previousNumber = randomNumber; 
+        return randomNumber; }
+} ;
+
 function suivant(){ 
-    var randomNumber = Math.floor(Math.random()*9) +1  ;
+    var randomNumber = getNumber();
     var boutonRandom = ".btn"+randomNumber ;
     $(boutonRandom).addClass("suivant");
 
