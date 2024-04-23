@@ -1,19 +1,38 @@
 body {
     text-align: center;
-    background-color: #011F3F;
-    font-family: 'Press Start 2P', cursive;
+    background-color: #135D66 ;
+    font-family: dosis, cursive;
+    height:100vh ;
   }
-
+header {
+  height: 12vh;
+  overflow: scroll;
+  margin: auto;
+}
   #level-title {
     font-size: 2rem;
     margin-bottom:  0;
+    margin-top: 0 ;
     color: #FEF2BF;
+
   }
   
   h2, h3 {
     font-size: 1rem;
-    margin:  1%;
     color: #FEF2BF;
+  }
+
+  .nav {
+    display: inline-block;
+    color: beige;
+    margin-right: 50px ;
+    margin-left: 50px ;
+    margin-bottom: 1%;
+    cursor: pointer;
+  }
+
+  .nav:hover {
+    background-color: grey;
   }
   .container {
     width: 90%;
@@ -32,22 +51,22 @@ body {
     margin-bottom : 0px ;
     display: inline-block;
     border: 10px solid black;
-    border-radius: 20%;
+    border-radius: 50%;
   }
 
   #b1, #b2, #b3 {
-    height: 250px;
-    width: 250px;
+    height: 25vh;
+    width: 25vh;
   }
   
   #m1, #m2, #m3 {
-    height: 200px;
-    width: 200px;
+    height: 20vh ;
+    width: 20vh;
   }
 
   #s1, #s2, #s3 {
-    height: 100px;
-    width: 100px;
+    height: 10vh;
+    width: 10vh;
   }
 
   .game-over {
@@ -56,11 +75,11 @@ body {
   }
   
   .red {
-    background-color: red;
+    background-color: #FF1700;
   }
   
   .green {
-    background-color: green;
+    background-color: #49FF00
   }
   
   .blue {
@@ -68,7 +87,7 @@ body {
   }
   
   .yellow {
-    background-color: yellow;
+    background-color: #FBFF00
   }
   
   .pressed {
@@ -80,15 +99,7 @@ body {
     box-shadow: 0 0 50px white;
   }
 
-  .nav {
-    display: inline-block;
-    color: beige;
-  }
-  
-  .nav:hover {
-    background-color: grey;
-  }
-
   .hidden {
-    display: none;
+    background-color: transparent;
+    border: none ;
   }
