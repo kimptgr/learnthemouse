@@ -6,7 +6,7 @@ body {
   }
 header {
   height: 12vh;
-  overflow: scroll;
+  overflow: visible;
   margin: auto;
 }
   #level-title {
