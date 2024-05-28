@@ -49,7 +49,7 @@ $(".btn").on("contextmenu", function(event) {
 $(".btn").on("dblclick", function(event) {
     var userChosenColor = $(this).attr("id");
         
-    if ($(this).hasClass("red") && $(this).hasClass("suivant") == true == true) {
+    if ($(this).hasClass("red") && $(this).hasClass("suivant") == true) {
         animatePress(userChosenColor);
         $(this).removeClass("suivant");
         suivant();
@@ -64,7 +64,7 @@ if (niv <= 1) {
         element.classList.add("green") ;
     })
         $("h1").text("Tout vert") ;
-        document.querySelector("h2").innerHTML = "Vert : clic gauche"
+        document.querySelector("h2").innerHTML = "Vert : Clic gauche"
         level = 1 ;
 }
 else if (niv == 2) {
@@ -77,7 +77,7 @@ else if (niv == 2) {
 }
 else if (niv == 3) {
     $("h1").text("Mini mix") ;
-    document.querySelector("h2").innerHTML = "Vert : Clic gauche <br> Jaune : Clic droit" ;
+    document.querySelector("h2").innerHTML = "Vert : Clic gauche, jaune : Clic droit" ;
     document.querySelectorAll("#s1, #m1, #b1, #s3").forEach(function(element){
         element.classList.remove("yellow", "red");
         element.classList.add("green") ;
@@ -97,7 +97,7 @@ else if (niv == 4) {
 
 else if  (level >= 5) {
     document.querySelector("h1").innerHTML = "Mix" ;
-    document.querySelector("h2").innerHTML = "Vert : Clic gauche <br> Jaune : Clic droit <br>Rouge : Double clic" ;
+    document.querySelector("h2").innerHTML = "Vert : Clic gauche, jaune : Clic droit , rouge : Double clic" ;
     document.querySelectorAll(".btn").forEach(function(element){
         element.classList.remove("yellow", "green", "red") ;
     })
