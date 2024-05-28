@@ -3,11 +3,11 @@ body {
     background-color: #135D66 ;
     font-family: dosis, cursive;
     height:100vh ;
+    margin: 0 ;
   }
 header {
-  height: 12vh;
   overflow: visible;
-  margin: auto;
+  margin: 0 auto;
 }
   #level-title {
     font-size: 2rem;
