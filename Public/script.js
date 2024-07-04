@@ -119,7 +119,8 @@ else if (niv == 4) {
     })
 }
 
-else if  (level == 5) {
+else if  (level >= 5) {
+    level = 5 ;
     document.querySelector("h1").innerHTML = "Mix" ;
     document.querySelector("h2").innerHTML = "Vert : Clic gauche, jaune : Clic droit, rouge : Double clic" ;
     document.querySelectorAll(".btn").forEach(function(element){
@@ -138,7 +139,7 @@ else if  (level == 5) {
         element.classList.remove("hidden") } ) 
              ;
         } 
-else if (level >= 6) {
+/* else if (level >= 6) {
             level = 6 ;
             document.querySelector("h1").innerHTML = "Test de rapidité vert " ;
             document.querySelectorAll(".btn").forEach(function(element){
@@ -146,7 +147,7 @@ else if (level >= 6) {
                 element.classList.remove("yellow", "red")
                 if (element.classList.contains("suivant") == false )
                 {element.classList.add("hidden")}
-            })}
+            })} */
 
 /* else if (level >= 6) {
     level = 6 ;
