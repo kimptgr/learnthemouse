@@ -120,19 +120,19 @@ function fonctionNiveau(niv) {
       element.classList.remove("yellow", "red");
       element.classList.add("green");
     });
-    document.querySelector("h1").innerHTML = "Tout Vert et hachuré";
-    document.querySelector("h2").innerHTML = "Vert et hachuré : Clic gauche";
+    document.querySelector("h1").innerText = "Tout Vert et hachuré";
+    document.querySelector("h2").innerText = "Vert et hachuré : Clic gauche";
     level = 1;
   } else if (niv == 2) {
-    document.querySelector("h1").innerHTML = "Tout jaune et croix";
-    document.querySelector("h2").innerHTML = "Jaune et croix : Clic droit";
+    document.querySelector("h1").innerText = "Tout jaune et croix";
+    document.querySelector("h2").innerText = "Jaune et croix : Clic droit";
     document.querySelectorAll(".btn").forEach(function (element) {
       element.classList.remove("green", "red");
       element.classList.add("yellow");
     });
   } else if (niv == 3) {
-    document.querySelector("h1").innerHTML = "Mini mix";
-    document.querySelector("h2").innerHTML =
+    document.querySelector("h1").innerText = "Mini mix";
+    document.querySelector("h2").innerText =
       "Vert et hachuré : Clic gauche, jaune et croix : Clic droit";
     document.querySelectorAll("#s1, #m1, #b1, #s3").forEach(function (element) {
       element.classList.remove("yellow", "red");
@@ -145,16 +145,16 @@ function fonctionNiveau(niv) {
         element.classList.add("yellow");
       });
   } else if (niv == 4) {
-    document.querySelector("h1").innerHTML = "Tout rouge à pois";
-    document.querySelector("h2").innerHTML = "Rouge à pois : Double clic";
+    document.querySelector("h1").innerText = "Tout rouge à pois";
+    document.querySelector("h2").innerText = "Rouge à pois : Double clic";
     document.querySelectorAll(".btn").forEach(function (element) {
       element.classList.remove("yellow", "green");
       element.classList.add("red");
     });
   } else if (level >= 5) {
     level = 5;
-    document.querySelector("h1").innerHTML = "Mix";
-    document.querySelector("h2").innerHTML =
+    document.querySelector("h1").innerText = "Mix";
+    document.querySelector("h2").innerText =
       "Vert et hachuré : Clic gauche, jaune et croix : Clic droit, rouge à pois : Double clic";
     document.querySelectorAll(".btn").forEach(function (element) {
       element.classList.remove("yellow", "green", "red");
@@ -174,7 +174,7 @@ function fonctionNiveau(niv) {
   }
   /* else if (level >= 6) {
             level = 6 ;
-            document.querySelector("h1").innerHTML = "Test de rapidité Vert/Hachuré " ;
+            document.querySelector("h1").innerText = "Test de rapidité Vert/Hachuré " ;
             document.querySelectorAll(".btn").forEach(function(element){
                 element.classList.add("green") ;
                 element.classList.remove("yellow", "red")
@@ -184,8 +184,8 @@ function fonctionNiveau(niv) {
 
   /* else if (level >= 6) {
     level = 6 ;
-    document.querySelector("h1").innerHTML = "Glisse" ;
-    document.querySelector("h2").innerHTML = "Glissez la petite boite dans la grosse boite" ;
+    document.querySelector("h1").innerText = "Glisse" ;
+    document.querySelector("h2").innerText = "Glissez la petite boite dans la grosse boite" ;
     document.querySelectorAll(".btn").forEach(function(element){
         element.classList.add("hidden")
     })
