@@ -181,6 +181,6 @@ span {
   border: none;
 }
 
-.displayNone {
-  display: none;
+.visibilityHidden {
+  visibility: hidden;
 }
