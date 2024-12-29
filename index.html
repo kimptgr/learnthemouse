@@ -1,80 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr-FR" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Apprendre à cliquer</title>
+    <link rel="stylesheet" href="Public/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Apprendre à cliquer</title>
-  <link rel="stylesheet" href="Public/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <header>
-    <div class="nav prec">
-      <span> &#x3008;  Exercice précédent </span>
+  <body>
+    <header>
+      <div id="btn-prev" class="nav prec">
+        <span> &#x3008; Exercice précédent </span>
         <i class="bg" aria-hidden="true"></i>
         <i class="bg" aria-hidden="true"></i>
         <i class="bg" aria-hidden="true"></i>
       </div>
-    <h1 id="level-title">Bougez la souris</h1>
-    <div class="nav suiv">
-      <span>Exercice suivant &#x3009;</span>
+      <h1 id="level-title">Bougez la souris</h1>
+      <div id="btn-next" class="nav suiv">
+        <span>Exercice suivant &#x3009;</span>
         <i class="bg" aria-hidden="true"></i>
         <i class="bg" aria-hidden="true"></i>
         <i class="bg" aria-hidden="true"></i>
       </div>
-    <h2 class="instruction">Pointez le rond en surbrillance et cliquez dessus avec le bouton gauche</h2>
-  </header>
+      <h2 class="instruction">
+        Pointez le rond en surbrillance et cliquez dessus avec le bouton gauche
+      </h2>
+    </header>
 
-  <div class="container">
-    <div class="row rowBig">
+    <div class="container">
+      <div class="row rowBig">
+        <div type="button" id="b3" class="btn green btn1"></div>
 
-      <div type="button" id="b3" class="btn green btn1">
+        <div type="button" id="m1" class="btn green btn2"></div>
 
+        <div type="button" id="s2" class="btn green btn3"></div>
       </div>
 
-      <div type="button" id="m1" class="btn green btn2">
+      <div class="row rowMedium">
+        <div type="button" id="s1" class="btn green btn4"></div>
 
+        <div type="button" id="b1" class="btn green btn5"></div>
+
+        <div type="button" id="m3" class="btn green btn6"></div>
       </div>
+      <div class="row rowSmall">
+        <div type="button" id="m2" class="btn green btn7"></div>
 
-      <div type="button" id="s2" class="btn green btn3">
+        <div type="button" id="s3" class="btn green btn8"></div>
 
+        <div type="button" id="b2" class="btn green btn9"></div>
       </div>
     </div>
-
-    <div class="row rowMedium">
-
-      <div type="button" id="s1" class="btn green btn4">
-
-      </div>
-
-      <div type="button" id="b1" class="btn green btn5">
-
-      </div>
-
-      <div type="button" id="m3" class="btn green btn6">
-
-      </div>
-
-    </div>
-    <div class="row rowSmall">
-
-        <div type="button" id="m2" class="btn green btn7">
-  
-        </div>
-  
-        <div type="button" id="s3" class="btn green btn8">
-
-        </div>
-
-        <div type="button" id="b2" class="btn green btn9">
-  
-        </div>
-      </div>
-  </div>
-  <script src="./Public/script.js" charset="utf-8"></script>
-</body>
-
+    <script src="./Public/script.js" charset="utf-8"></script>
+  </body>
 </html>
