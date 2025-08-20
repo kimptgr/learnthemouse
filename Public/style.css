@@ -35,7 +35,7 @@ h3 {
   cursor: pointer;
   white-space: nowrap;
   line-height: 2.4;
-  border: none;
+  border: 3px solid transparent;
   height: 50px;
   width: 30vw;
   border-radius: 7px;
@@ -181,7 +181,6 @@ span {
 
 .hidden {
   background-color: transparent;
-  border: none;
 }
 
 .visibilityHidden {
